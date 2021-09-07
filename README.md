@@ -2,6 +2,8 @@
 
 This repository contains homeworks and solutions from course _Osnove programskog jezika Java_ (aka _Čupićeva java_) lectured by prof. dr. sc. Marko Čupić in the 2017-2018 academic year. **Students were given mostly 4, but up to 6, days to complete each homework**. Homeworks and their auxilary files are given in `tekstovi_zadataka` directory, but solutions are in `hw*` directories.
 
+In total, this repo contains 32400 java lines of code - many more were written and deleted in the process.
+
 ## Short description of given homeworks
 
 Most interesting (in my opinion) homeworks are bolded. All of them used **Maven** as build tool, and few of them used **Tomcat**. Homeworks were solved with OOP principles and **design patterns** in mind.
