@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Galerija</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        
+        <link rel="stylesheet" href="stil.css">
+        <script>
+            
+            $(document).ready(
+                    showTags()
+            );
+            
+            function showTags() {
+                $.ajax(
+                    {
+                        url: "rest/tags",
+                        dataType: "json",
+                        type: 'GET',
+                        success: function(data) {
+                            var tags = data.tags;
+                            var htmlText = "";
+                            if(tags.length == 0) {
+                                htmlText = "Nema rezultata";
+                            } else {
+                                for(let tag of tags) {
+                                    htmlText +=
+                                        "<button class=\"tagButton\" id=\"tagButton\" onclick=\"showThumbnails('" +
+                                        tag +
+                                        "')\">" +
+                                        tag +
+                                        "</button> ";
+                                }
+                            }
+                            
+                            $("#content > #tagsField").html(htmlText);
+                        }
+                    }
+                );
+            }
+            
+            function showThumbnails(tag) {
+                $.ajax(
+                    {
+                        url: "rest/tag/" + tag,
+                        dataType: "json",
+                        type: 'GET',
+                        success: function(data) {
+                            var htmlText = "";
+                            
+                            images = data.images;
+                            
+                            let i = 1;
+                            for(let imageName of images) {
+                                htmlText +=
+                                    "<a href=\"javascript:showPhoto('" + imageName + "')\">" +
+                                    "<img src=\"rest/thumbnail?image=" + imageName + "\">" +
+                                    "</a>";
+                            }
+
+                            $("#content > #thumbnails").html(htmlText);
+                            $("#content").children().hide(); 
+                            $("#content > #thumbnails").show();
+                            $("#content > #tagsField").show();
+                        }
+                    }
+                );
+            }
+            
+            function showPhoto(imageName) {
+
+                $.ajax(
+                    {
+                        url: "rest/image?image=" + imageName,
+                        type: 'POST',
+                        success: function(data) {
+                            let htmlText = "";
+                            htmlText += "Title: " + data.title + "<br>";
+                            htmlText += "SRC name: " + data.path + "<br>";
+                            htmlText += "tags: <br>";
+                            for(let tag of data.tags) {
+                                htmlText += tag + " ";
+                            }
+                            htmlText += "<br>";
+                            $("#content > #photo-info").html(htmlText);
+                            $("#content > #photo-info").show();
+                            }
+                    }
+                );
+                
+                
+                
+                let htmlText2 =
+                    "<img class=\"bigImage\" src=\"rest/image?image=" + imageName + "\">";
+                
+                $("#content > #photo").html(htmlText2);
+                $("#content > #photo").show();
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <div id="tagsField"></div>
+            <div id="photo" style="display: none;"></div>
+            <div id="photo-info" style="display: none;"></div>
+            <div id="thumbnails" style="display: none;"></div>
+        </div>
+    </body>
+    
+    <!--
+
+-->

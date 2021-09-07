@@ -1,0 +1,43 @@
+body{     
+    max-width: 100%;
+    margin: auto;
+    background-color:bisque;
+ }
+
+#thumbnails {
+    max-width: 800px;
+    margin: auto;
+}
+
+#thumbnails img {
+    padding:10px;
+    border:3px black;
+}
+
+.tagButton {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.tagButton:hover {
+    background-color: #008CFF;
+}
+
+.bigImage {
+    border-color: black;
+    border-style: solid;
+}
+
+#photo-info {
+    border-color:black;
+    border-style: solid;
+    margin: 15px;
+    padding:10px;
+}

@@ -1,0 +1,4 @@
+{$= "text/plain" @setMimeType $}
+Računam sumu brojeva:
+{$= "a=" "a" 1 @paramGet ", b=" "b" 2 @paramGet ", rezultat=" "a" 3
+@paramGet "b" 0 @paramGet + $}

@@ -1,0 +1,11 @@
+hr/fer/zemris/java/tecaj_13/dao/DAO.class
+hr/fer/zemris/java/tecaj_13/dao/jpa/JPAEMFProvider.class
+hr/fer/zemris/java/tecaj_13/dao/DAOException.class
+hr/fer/zemris/java/tecaj_13/dao/DAOProvider.class
+hr/fer/zemris/java/tecaj_13/model/BlogUser.class
+hr/fer/zemris/java/tecaj_13/model/BlogEntry.class
+hr/fer/zemris/java/tecaj_13/dao/jpa/JPADAOImpl.class
+hr/fer/zemris/java/tecaj_13/dao/jpa/JPAFilter.class
+hr/fer/zemris/java/tecaj_13/dao/jpa/JPAEMProvider.class
+hr/fer/zemris/java/tecaj_13/web/init/Inicijalizacija.class
+hr/fer/zemris/java/tecaj_13/model/BlogComment.class
